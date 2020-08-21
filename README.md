@@ -1,5 +1,9 @@
 # Proper vs. Improper Way to do React Context with Dynamic Value
 
+NOTE: The "improper" way still works and you might never notice the difference, 
+but the "proper" way shown here is the most efficient performance-wise. The 
+"improper" way is shown in the React docs here: https://reactjs.org/docs/context.html
+
 ## Improper
 
 [Improper Use Code]
