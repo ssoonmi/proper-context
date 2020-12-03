@@ -1,30 +1,22 @@
-import React from 'react';
+import { useState } from 'react';
 
-import Context from './Context';
-import Component from './Component';
-import ConnectedComponent from './ConnectedComponent';
+import ExampleContext from './context/ExampleContext';
+import Component from './components/Component';
+import ConnectedComponent from './components/ConnectedComponent';
 
-class AppWithContext extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      num: 0,
-      increment: this.increment
-    };
+function AppWithContext() {
+  const [num, setNum] = useState(0);
+
+  const increment = () => {
+    setNum(num + 1);
   }
 
-  increment = () => {
-    this.setState((state) => ({ num: state.num + 1 }));
-  }
-
-  render() {
-    console.log('App With Context is rendering')
-    return (
-      <Context.Provider value={this.state}>
-        <App />
-      </Context.Provider>
-    );
-  }
+  console.log('App With Context is rendering');
+  return (
+    <ExampleContext.Provider value={{ num, increment }}>
+      <App />
+    </ExampleContext.Provider>
+  );
 }
 
 function App() {

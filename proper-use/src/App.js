@@ -1,8 +1,6 @@
-import React from 'react';
-
-import { ContextProvider } from './Context';
-import Component from './Component';
-import ConnectedComponent from './ConnectedComponent';
+import ExampleContextProvider from './context/ExampleContext';
+import Component from './components/Component';
+import ConnectedComponent from './components/ConnectedComponent';
 
 function App() {
   console.log('App is rendering');
@@ -17,9 +15,9 @@ function App() {
 function Root() {
   console.log('Root is rendering');
   return (
-    <ContextProvider>
+    <ExampleContextProvider>
       <App />
-    </ContextProvider>
+    </ExampleContextProvider>
   );
 }
 
